@@ -4,7 +4,7 @@ stick_distance = 90000;
 cursor_stick_distance = 200000;
 zIndex = -2;
 opacity = 0.8;
-line_color = "";
+line_color = #55aeae;
 count = 95;
 
 ! function() {
