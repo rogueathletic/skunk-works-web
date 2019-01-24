@@ -1,10 +1,10 @@
-acc_strength = 2;
-pull_strength = 0.02;
+acc_strength = 1;
+pull_strength = 0.004;
 stick_distance = 90000;
 cursor_stick_distance = 200000;
 zIndex = -2;
 opacity = 0.8;
-line_color = #55aeae;
+line_color = "";
 count = 95;
 
 ! function() {
