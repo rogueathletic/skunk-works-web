@@ -139,7 +139,7 @@ function showMenu(e) {
         visible = true;
         el.classList.add('show-menu');
         menu.setAttribute('aria-hidden', false);
-        document.addEventListener('mousedown', hideMenu, false);
+        document.addEventListener('mouseup', hideMenu, false);
     }
 }
 
@@ -151,7 +151,7 @@ function hideMenu(e) {
         visible = false;
         el.classList.remove('show-menu');
         menu.setAttribute('aria-hidden', true);
-        document.removeEventListener('mousedown', hideMenu);
+        document.removeEventListener('mouseup', hideMenu);
     }
 }
 
