@@ -1,4 +1,4 @@
-$("sww__copy").draggable();
+$("#sww__copy").draggable();
 
 acc_strength = 1.2;
 pull_strength = 0.000001;
