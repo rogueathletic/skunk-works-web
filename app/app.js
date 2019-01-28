@@ -1,3 +1,5 @@
+$("sww__copy").draggable();
+
 acc_strength = 1.2;
 pull_strength = 0.000001;
 stick_distance = 90000;
