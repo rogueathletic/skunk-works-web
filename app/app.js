@@ -1,13 +1,13 @@
-acc_strength = 1;
-pull_strength = 0.004;
+acc_strength = 1.2;
+pull_strength = 0.000001;
 stick_distance = 90000;
 cursor_stick_distance = 200000;
 zIndex = -2;
 opacity = 0.8;
 line_color = "";
-count = 95;
+count = 35;
 
-! function() {
+! function () {
   // Encapsulate the method after compression to reduce the file size
   function get_attribute(node, attr, default_value) {
     return node.getAttribute(attr) || default_value;
@@ -31,8 +31,8 @@ count = 95;
   }
   // Set the width of the canvas
   function set_canvas_size() {
-    canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, 
-    canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+      canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   }
 
   // Drawing process
@@ -41,12 +41,12 @@ count = 95;
     // Random lines and the current position of the union array
     var e, i, d, x_dist, y_dist, dist; // Temporary node
     // Traverse handles every point
-    random_points.forEach(function(r, idx) {
-      r.x += r.xa, 
-      r.y += r.ya, // mobile
-      r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1, 
-      r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, // Hit the border, reverse rebound
-      context.fillRect(r.x - 0.5, r.y - 0.5, 0, 0); // Draw a point with a width of 1
+    random_points.forEach(function (r, idx) {
+      r.x += r.xa,
+        r.y += r.ya, // mobile
+        r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1,
+        r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, // Hit the border, reverse rebound
+        context.fillRect(r.x - 0.5, r.y - 0.5, 0, 0); // Draw a point with a width of 1
       // Starting from the next point
       for (i = idx + 1; i < all_array.length; i++) {
         e = all_array[i];
@@ -72,10 +72,12 @@ count = 95;
   var the_canvas = document.createElement("canvas"), // Canvas
     config = get_config_option(), // Configuration
     canvas_id = "c_n" + config.l, // Canvas id
-    context = the_canvas.getContext("2d"), canvas_width, canvas_height, 
-    frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) {
+    context = the_canvas.getContext("2d"),
+    canvas_width, canvas_height,
+    frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (func) {
       window.setTimeout(func, 100 / 45);
-    }, random = Math.random, 
+    },
+    random = Math.random,
     current_point = {
       x: null, // Current mouse x
       y: null, // Current mouse y
@@ -90,11 +92,11 @@ count = 95;
   set_canvas_size();
   window.onresize = set_canvas_size;
   // When the mouse position storage, leave the time, release the current location information
-  window.onmousemove = function(e) {
+  window.onmousemove = function (e) {
     e = e || window.event;
     current_point.x = e.clientX;
     current_point.y = e.clientY;
-  }, window.onmouseout = function() {
+  }, window.onmouseout = function () {
     current_point.x = null;
     current_point.y = null;
   };
@@ -110,7 +112,7 @@ count = 95;
       y: --y,
       xa: --xa,
       ya: --ya,
-        x: ++x,
+      x: ++x,
       y: ++y,
       xa: ++xa,
       ya: ++ya,
@@ -119,51 +121,42 @@ count = 95;
   }
   all_array = random_points.concat([current_point]);
   // 0.1 seconds after drawing
-  setTimeout(function() {
+  setTimeout(function () {
     draw_canvas();
   }, 100);
-  
-  
-  
-//   contact info below
-  
-  
-  var el = document.querySelector('.more');
-var btn = el.querySelector('.btn');
-var menu = el.querySelector('.menu');
-var visible = false;
 
-function showMenu(e) {
+
+
+  //   contact info below
+
+
+  var el = document.querySelector('.more');
+  var btn = el.querySelector('.btn');
+  var menu = el.querySelector('.menu');
+  var visible = false;
+
+  function showMenu(e) {
     e.preventDefault();
     if (!visible) {
-        visible = true;
-        el.classList.add('show-menu');
-        menu.setAttribute('aria-hidden', false);
-        document.addEventListener('mouseup', hideMenu, false);
+      visible = true;
+      el.classList.add('show-menu');
+      menu.setAttribute('aria-hidden', false);
+      document.addEventListener('mouseup', hideMenu, false);
     }
-}
+  }
 
-function hideMenu(e) {
+  function hideMenu(e) {
     if (btn.contains(e.target)) {
-        return;
+      return;
     }
     if (visible) {
-        visible = false;
-        el.classList.remove('show-menu');
-        menu.setAttribute('aria-hidden', true);
-        document.removeEventListener('mouseup', hideMenu);
+      visible = false;
+      el.classList.remove('show-menu');
+      menu.setAttribute('aria-hidden', true);
+      document.removeEventListener('mouseup', hideMenu);
     }
-}
+  }
 
-btn.addEventListener('click', showMenu, false);
-  
-  
-  
-  
-  
-  // contact info above
-  
-  
-  
-  
+  btn.addEventListener('click', showMenu, false);
+
 }();
