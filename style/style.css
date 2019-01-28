@@ -82,7 +82,7 @@ body{
 #sww__copy{
   letter-spacing:       .15em;
   font-size:             10vw;
-  margin-top:            10vw;
+  margin-top:            (12px + 10vw);
   text-align:            center;  
   color:                                rgba(  005, 24, 21, 0.8  );
   text-shadow:           1px -1px 0     rgba(  118, 118, 118,.2  ), 
