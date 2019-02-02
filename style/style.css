@@ -10,7 +10,7 @@ body{
                               -webkit-background-size: cover;
                               -moz-background-size: cover;
                               -o-background-size: cover;
-                              background-size: cover;;
+                              background-size: cover;
   
   
 }
@@ -42,7 +42,7 @@ body{
 
 .dot {
   margin:             0 auto;
-  background-color: #55aeae;
+  background-color: #468f8f;
   display:            inline-block;
   margin-right:       1px;
   height:             7px;
@@ -51,21 +51,25 @@ body{
 }
 
 .menu {
-  opacity:            0.5;
+  position: absolute;
+left: 50%;
+-webkit-transform: translateX(-50%);
+transform: translateX(-50%);
+
+  opacity:            0;
   margin-top:         9px;
   border-radius:      4px;
   z-index:            900;
   top:                120%;
-  width:              400px;
+  width:              40VW;
   padding:            10px 0;
   float:              left;
-  pointer-events:     none;
-  background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, .9);
+  box-shadow: inset 5px 5px 5px RGBA(0,0,0,.3);
   position:           absolute;
-  border:             1px solid #ccd8e0;
-  -webkit-transform:  translate(  0, 15px  ) scale(  0.95  );
+  /* -webkit-transform:  translate(  0, 15px  ) scale(  0.95  );
   transform:          translate(  0, 15px  ) scale(  0.95  );
-  box-shadow:         1px 1px 3px rgba(  0, 0, 0, 0.25  );
+  box-shadow:         1px 1px 3px rgba(  0, 0, 0, 0.25  ); */
   /* transition:         transform 0.1s ease-out, opacity 0.1s ease-out; */
 }
 
@@ -82,10 +86,11 @@ body{
 
 #li-1,
 #li-2 {
-  color: #55aeae;
+  color: #000000;
 }
 
 #sww__copy{
+  z-index: 2;
   margin-top:             60px;
   letter-spacing: .15em;
   font-size:       10vw;
