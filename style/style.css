@@ -11,6 +11,16 @@ body{
                               -moz-background-size: cover;
                               -o-background-size: cover;
                               background-size: cover;
+  background: -webkit-gradient(rgba(  255, 255, 255     ), 
+                              rgba(  255, 255, 255     ), 
+                              rgba(  255, 255, 255     ), 
+                              rgba(  192, 192, 192, .4 ), 
+                              rgba(  128, 128, 128, .4 ), 
+                              rgba(  47, 79, 79,.8     ))no-repeat center center fixed; 
+                              -webkit-background-size: cover;
+                              -moz-background-size: cover;
+                              -o-background-size: cover;
+                              background-size: cover;
   
   
 }
