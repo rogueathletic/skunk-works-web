@@ -1,6 +1,5 @@
-
 acc_strength = 1.2;
-pull_strength = 0.000001;
+pull_strength = 0.0000001;
 stick_distance = 90000;
 cursor_stick_distance = 200000;
 zIndex = -2;
